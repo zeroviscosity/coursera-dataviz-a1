@@ -39,7 +39,7 @@
   <body>
     <h1>Annual Mean Land-Ocean Temperature Index</h1>
     <div id="chart"></div>
-    <div id="explanation">This chart depicts temperature deviations from the corresponding 1951-1980 means over the period of 1880-2014. It uses a subset of the <a href="http://data.giss.nasa.gov/gistemp/tabledata_v3/ZonAnn.Ts+dSST.txt">Zonal annual means</a> dataset in the GISS Surface Temperature Analysis; specifically, it includes the global, northern hemisphere and southern hemisphere deviations. The deviations were converted to degrees Celsius from the original scale of 1/100 degrees Celsius. A general upward trend can clearly be seen from roughly 1910 onwards, although it is more pronounced from roughly 1970 onwards.</div>
+    <div id="explanation">This chart depicts temperature deviations from the corresponding 1951-1980 means over the period of 1880-2014. It uses a subset of the <a href="http://data.giss.nasa.gov/gistemp/tabledata_v3/ZonAnn.Ts+dSST.txt">Zonal annual means</a> dataset in the GISS Surface Temperature Analysis; specifically, it includes the northern hemisphere and southern hemisphere deviations. The deviations were converted to degrees Celsius from the original scale of 1/100 degrees Celsius. A general upward trend can clearly be seen from roughly 1910 onwards, although it is more pronounced from roughly 1970 onwards.</div>
     <div id="citation">
       <div>+ GISTEMP Team, 2015: GISS Surface Temperature Analysis (GISTEMP). NASA Goddard Institute for Space Studies. Dataset accessed 2015-08-02 at <a href="http://data.giss.nasa.gov/gistemp/">http://data.giss.nasa.gov/gistemp/</a>.</div>
       <div>+ Hansen, J., R. Ruedy, M. Sato, and K. Lo, 2010: Global surface temperature change, Rev. Geophys., 48, RG4004, doi:10.1029/2010RG000345.</div>
@@ -83,7 +83,7 @@
         .append('g')
         .attr('transform', 'translate(' + margin.left + ',' + margin.top + ')');
 
-      d3.csv('zone-data.csv', function(error, data) {
+      d3.csv('data.csv', function(error, data) {
         if (error) throw error;
 
         color.domain(d3.keys(data[0]).filter(function(key) { return key !== 'Year'; }));
